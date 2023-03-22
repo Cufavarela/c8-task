@@ -1,9 +1,11 @@
 import { ToggleBtn } from "./components/ToggleBtn";
 import { useBrowserSize } from "./hooks/useBrowserSize";
+import useTheme from "./hooks/useTheme";
 
 export default function App() {
-  const { browserHeight, browserWidth, deviceType, darkMode } =
-    useBrowserSize();
+  const { browserHeight, browserWidth, deviceType } = useBrowserSize();
+
+  const { darkMode } = useTheme();
 
   return (
     <div className={`${darkMode ? "dark" : "light"} w-screen h-screen `}>

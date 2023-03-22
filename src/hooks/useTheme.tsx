@@ -8,7 +8,7 @@ const useTheme = () => {
     actions.setDarkMode(!state.darkMode);
   };
 
-  return { toggleTheme };
+  return { ...state, toggleTheme };
 };
 
 export default useTheme;
