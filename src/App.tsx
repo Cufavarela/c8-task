@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ToggleBtn } from "./components/ToggleBtn";
+import { useBrowserSize } from "./hooks/useBrowserSize";
 
-function App() {
+export default function App() {
+  const { browserHeight, browserWidth, deviceType, darkMode } =
+    useBrowserSize();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${darkMode ? "dark" : "light"} w-screen h-screen `}>
+      <div
+        className={`w-screen h-screen flex justify-center content-center flex-wrap bg-gradient-to-r from-purple-600 to-blue-600 dark:from-gray-700 dark:to-blue-900`}
+      >
+        <div className="h-fit bg-white dark:bg-black border rounded border-4 border-orange-600 dark:border-orange-100 p-8">
+          <h2 className="text-xl text-black dark:text-white font-bold">
+            Width: {browserWidth}
+          </h2>
+
+          <h2 className="text-xl text-black dark:text-white font-bold">
+            Height: {browserHeight}
+          </h2>
+
+          <h2 className="text-xl text-black dark:text-white font-bold">
+            Device: {deviceType} {deviceType === "monitor" ? "💻" : "📱"}
+          </h2>
+
+          <div className="flex justify-center content-center mt-8">
+            <ToggleBtn />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
