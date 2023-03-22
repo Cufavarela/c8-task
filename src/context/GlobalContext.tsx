@@ -3,7 +3,7 @@ import { GlobalContextProps, GlobalContextProviderProps } from "../types/Types";
 
 export const GlobalContext = React.createContext<GlobalContextProps>({
   state: {
-    deviceType: "monitor",
+    deviceType: "Desktop",
     browserWidth: 0,
     browserHeight: 0,
     darkMode: false,
@@ -21,8 +21,11 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> = ({
 }) => {
   const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
   const [browserHeight, setBrowserHeight] = useState(window.innerHeight);
-  const [darkMode, setDarkMode] = useState(false);
-  const [deviceType, setDeviceType] = useState("monitor");
+  const storagedTheme = localStorage.getItem("theme");
+  const [darkMode, setDarkMode] = useState(
+    storagedTheme && storagedTheme === "dark" ? true : false
+  );
+  const [deviceType, setDeviceType] = useState("Desktop");
 
   const state = {
     deviceType,

@@ -22,7 +22,7 @@ export default function App() {
           </h2>
 
           <h2 className="text-xl text-black dark:text-white font-bold">
-            Device: {deviceType} {deviceType === "monitor" ? "💻" : "📱"}
+            Device: {deviceType} {deviceType === "Desktop" ? "💻" : "📱"}
           </h2>
 
           <div className="flex justify-center content-center mt-8">

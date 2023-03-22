@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 const useTheme = () => {
@@ -7,6 +7,10 @@ const useTheme = () => {
   const toggleTheme = () => {
     actions.setDarkMode(!state.darkMode);
   };
+
+  useEffect(() => {
+    localStorage.setItem("theme", state.darkMode ? "dark" : "light");
+  }, [state.darkMode]);
 
   return { ...state, toggleTheme };
 };
