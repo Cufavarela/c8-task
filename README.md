@@ -2,13 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Instructions for installing and running the project. 👨‍💻
+## Instructions for installing and running the project 👨‍💻
 
 In the project directory, you must run:
 
 ### `npm install`
 
-In order tu install the necessary dependecies.
+In order tu install the necessary dependecies.<br/>
+[Tailwind CSS](https://tailwindcss.com/)
 
 ### `npm start`
 
@@ -19,3 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Demo 🛠
+
+<img src="./demo-desktop.gif" width="500">
+
+<img src="./demo-mobile.jpeg" width="300">
