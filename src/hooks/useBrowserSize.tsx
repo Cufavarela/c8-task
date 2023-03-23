@@ -5,10 +5,9 @@ import { throttleFunction } from "../utils/throttleFunction";
 export const useBrowserSize = () => {
   const { state, actions } = useContext(GlobalContext);
   const userAgent: string = window.navigator.userAgent;
-  console.log(userAgent);
 
   const isMobileDevice = (): boolean => {
-    const regexs = [
+    const regexPatterns = [
       /(Android)(.+)(Mobile)/i,
       /BlackBerry/i,
       /iPhone|iPod/i,
@@ -16,7 +15,7 @@ export const useBrowserSize = () => {
       /IEMobile/i,
       /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/,
     ];
-    return regexs.some((b) => userAgent.match(b));
+    return regexPatterns.some((b) => userAgent.match(b));
   };
 
   const handleWindowResize = useMemo(
